@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "2.7.5"
+ruby "3.1.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"
@@ -41,6 +41,11 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
+
+gem 'unicorn', '~> 6.1.0'
+gem 'pg', '~> 1.3.5'
+gem 'sidekiq', '~> 6.4.2'
+gem 'redis-rails', '~> 5.0.2'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
