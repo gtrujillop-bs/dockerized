@@ -7,12 +7,12 @@ RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.lis
 RUN apt-get update && apt-get install -y --no-install-recommends nodejs yarn
 
 # Default directory
-ENV INSTALL_PATH /opt/app
+ENV INSTALL_PATH=/opt/app
 RUN mkdir -p $INSTALL_PATH
 
 # Install gems
 WORKDIR $INSTALL_PATH
-COPY dockerized/ .
+COPY . .
 RUN rm -rf node_modules vendor
 RUN gem install rails bundler
 RUN bundle install
